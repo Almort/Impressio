@@ -1,0 +1,192 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f5f0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+main.container {
+    padding-top: 90px;
+}
+
+/* ===== ШАПКА ===== */
+.navbar {
+    transition: background-color 0.3s ease;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* ===== HERO ===== */
+.masthead {
+    position: relative;
+    overflow: hidden;
+}
+
+.masthead-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.55), rgba(0,0,0,0.35));
+}
+
+.masthead .container {
+    z-index: 2;
+}
+
+.masthead h1 {
+    text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    color: #fff;
+}
+
+.masthead .lead {
+    text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+    color: #f1f1f1;
+}
+
+/* ===== ЗАГОЛОВКИ СЕКЦИЙ ===== */
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: #ff9d4e;
+    border-radius: 2px;
+}
+
+/* ===== КАРУСЕЛЬ ===== */
+#squareCarousel {
+    width: 500px;
+    max-width: 100%;
+}
+
+#squareCarousel .carousel-item {
+    position: relative;
+    padding-top: 100%;
+    overflow: hidden;
+}
+
+#squareCarousel .carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: #ff9d4e;
+    border-radius: 5px;
+}
+
+#squareCarousel .carousel-indicators {
+    bottom: -40px;
+}
+
+#squareCarousel .carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ff9d4e;
+    opacity: 0.4;
+    margin: 0 5px;
+    border: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#squareCarousel .carousel-indicators .active {
+    background-color: #fdc50dc9;
+    opacity: 1;
+    transform: scale(1.25);
+}
+
+#squareCarousel .carousel-control-prev,
+#squareCarousel .carousel-control-next {
+    width: 10%;
+    opacity: 0.7;
+}
+
+#squareCarousel .carousel-control-prev:hover,
+#squareCarousel .carousel-control-next:hover {
+    opacity: 1;
+}
+
+/* ===== О ХУДОЖНИКЕ ===== */
+.artist-section {
+    background: #fff;
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+}
+
+.artist-photo {
+    transition: transform 0.4s ease;
+}
+
+.artist-photo:hover {
+    transform: scale(1.03);
+}
+
+/* ===== ПОДВАЛ ===== */
+footer {
+    border-top: 3px solid #ff9d4e;
+}
+
+footer a {
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: #ff9d4e !important;
+}
+
+/* ===== МОДАЛКИ ===== */
+.modal-content {
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 576px) {
+    main.container {
+        padding-top: 80px;
+    }
+    #squareCarousel {
+        width: 100%;
+        max-width: 100%;
+    }
+    #squareCarousel .carousel-indicators [data-bs-target] {
+        width: 12px;
+        height: 12px;
+    }
+    .artist-section {
+        padding: 1.5rem;
+    }
+    .masthead h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .masthead h1 {
+        font-size: 2.5rem;
+    }
+}
